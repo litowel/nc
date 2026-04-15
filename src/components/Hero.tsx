@@ -1,27 +1,22 @@
 import { motion } from 'motion/react';
 import { ChevronRight } from 'lucide-react';
 
-export default function Hero() {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Cinematic Background Image */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="https://picsum.photos/seed/nexushero2/1920/1080" 
-          alt="Futuristic City" 
-          className="w-full h-full object-cover opacity-40 scale-105 animate-[pulse_20s_ease-in-out_infinite_alternate]"
-          referrerPolicy="no-referrer"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#030712]/80 via-[#030712]/60 to-[#030712]"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#030712] via-transparent to-[#030712]"></div>
-      </div>
+interface HeroProps {
+  onOpenModal: () => void;
+}
 
-      {/* Grid Pattern Overlay */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-20 z-0 mix-blend-overlay"></div>
-      
-      {/* Glowing Orbs */}
-      <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-blue-600/20 rounded-full blur-[120px] z-0 animate-[pulse_8s_ease-in-out_infinite_alternate]"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-green-600/10 rounded-full blur-[100px] z-0 animate-[pulse_10s_ease-in-out_infinite_alternate_reverse]"></div>
+export default function Hero({ onOpenModal }: HeroProps) {
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-[#020617]">
+      {/* Sleek Architectural/Tech CSS Background */}
+      <div className="absolute inset-0 z-0">
+        {/* Animated glowing lines simulating city grid */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-30"></div>
+        
+        {/* Deep glowing orbs */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-blue-600/20 rounded-[100%] blur-[120px] animate-[pulse_8s_ease-in-out_infinite_alternate]"></div>
+        <div className="absolute bottom-0 right-0 w-[800px] h-[600px] bg-green-600/10 rounded-[100%] blur-[120px] animate-[pulse_10s_ease-in-out_infinite_alternate_reverse]"></div>
+      </div>
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
@@ -39,7 +34,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-6xl md:text-8xl lg:text-9xl font-bold mb-6 tracking-tighter leading-[1.05]"
+            className="text-7xl md:text-9xl lg:text-[10rem] font-bold mb-6 tracking-tighter leading-[0.95]"
           >
             Building the <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-white to-green-400 text-glow-blue">
@@ -66,7 +61,10 @@ export default function Hero() {
               Explore the Vision
               <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="px-8 py-4 border border-white/30 bg-black/30 backdrop-blur-md hover:border-white/60 hover:bg-white/10 transition-all text-white font-bold rounded w-full sm:w-auto justify-center text-lg">
+            <button 
+              onClick={onOpenModal}
+              className="px-8 py-4 border border-white/30 bg-black/30 backdrop-blur-md hover:border-white/60 hover:bg-white/10 transition-all text-white font-bold rounded w-full sm:w-auto justify-center text-lg"
+            >
               View Investor Deck
             </button>
           </motion.div>
@@ -86,4 +84,5 @@ export default function Hero() {
     </section>
   );
 }
+
 

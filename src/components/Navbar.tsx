@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
-export default function Navbar() {
+interface NavbarProps {
+  onOpenModal: () => void;
+}
+
+export default function Navbar({ onOpenModal }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -29,7 +33,10 @@ export default function Navbar() {
           <a href="#" className="hover:text-white transition-colors">Systems</a>
           <a href="#" className="hover:text-white transition-colors">Projects</a>
           <a href="#" className="hover:text-white transition-colors">Technology</a>
-          <button className="px-5 py-2 border border-white/20 hover:bg-white hover:text-black transition-all rounded">
+          <button 
+            onClick={onOpenModal}
+            className="px-5 py-2 border border-white/20 hover:bg-white hover:text-black transition-all rounded"
+          >
             Investor Portal
           </button>
         </div>
@@ -50,7 +57,13 @@ export default function Navbar() {
           <a href="#" className="text-slate-300 hover:text-white py-2">Systems</a>
           <a href="#" className="text-slate-300 hover:text-white py-2">Projects</a>
           <a href="#" className="text-slate-300 hover:text-white py-2">Technology</a>
-          <button className="px-5 py-3 border border-white/20 hover:bg-white hover:text-black transition-all rounded mt-2 text-white">
+          <button 
+            onClick={() => {
+              setMobileMenuOpen(false);
+              onOpenModal();
+            }}
+            className="px-5 py-3 border border-white/20 hover:bg-white hover:text-black transition-all rounded mt-2 text-white"
+          >
             Investor Portal
           </button>
         </div>
@@ -58,3 +71,4 @@ export default function Navbar() {
     </nav>
   );
 }
+
