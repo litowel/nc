@@ -8,6 +8,7 @@ import Hero from './components/Hero';
 import CorePillars from './components/CorePillars';
 import ElevatedSystem from './components/ElevatedSystem';
 import Masterplan from './components/Masterplan';
+import TechnicalSpecs from './components/TechnicalSpecs';
 import GhanaPilot from './components/GhanaPilot';
 import GlobalVision from './components/GlobalVision';
 import TechLayer from './components/TechLayer';
@@ -28,6 +29,7 @@ export default function App() {
         <CorePillars />
         <ElevatedSystem />
         <Masterplan />
+        <TechnicalSpecs />
         <GhanaPilot />
         <GlobalVision />
         <TechLayer />
@@ -39,6 +41,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
