@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-nexus-bg: #030712;
+  --color-nexus-surface: #0f172a;
+  --color-nexus-blue: #3b82f6;
+  --color-nexus-blue-glow: rgba(59, 130, 246, 0.5);
+  --color-nexus-green: #10b981;
+  --color-nexus-green-glow: rgba(16, 185, 129, 0.5);
+}
+
+body {
+  background-color: var(--color-nexus-bg);
+  color: #f8fafc;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+/* Glowing text effect */
+.text-glow-blue {
+  text-shadow: 0 0 20px var(--color-nexus-blue-glow);
+}
+.text-glow-green {
+  text-shadow: 0 0 20px var(--color-nexus-green-glow);
+}
+
+/* Grid background pattern */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Subtle glowing borders */
+.border-glow {
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.1);
+}
+
+.border-glow:hover {
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+}
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(to right, #fff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
