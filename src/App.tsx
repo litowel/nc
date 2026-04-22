@@ -9,8 +9,9 @@ import CorePillars from './components/CorePillars';
 import ElevatedSystem from './components/ElevatedSystem';
 import Masterplan from './components/Masterplan';
 import TechnicalSpecs from './components/TechnicalSpecs';
-import GhanaPilot from './components/GhanaPilot';
+import ProposedProjects from './components/ProposedProjects';
 import GlobalVision from './components/GlobalVision';
+import CivilizationStages from './components/CivilizationStages';
 import TechLayer from './components/TechLayer';
 import Investment from './components/Investment';
 import CTA from './components/CTA';
@@ -30,8 +31,9 @@ export default function App() {
         <ElevatedSystem />
         <Masterplan />
         <TechnicalSpecs />
-        <GhanaPilot />
+        <ProposedProjects />
         <GlobalVision />
+        <CivilizationStages />
         <TechLayer />
         <Investment />
         <CTA />
@@ -41,6 +43,8 @@ export default function App() {
     </div>
   );
 }
+
+
 
 
 

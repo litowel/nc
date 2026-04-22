@@ -1,27 +1,27 @@
 import { motion } from 'motion/react';
-import { Globe, ArrowRight, Sparkles } from 'lucide-react';
+import { Globe, ArrowRight, Sparkles, CheckCircle2 } from 'lucide-react';
 
 const systems = [
-  { id: "01", title: "Planetary Grid", desc: "Unified HVDC network distributing renewable energy across continents.", color: "from-blue-500 to-cyan-400" },
-  { id: "02", title: "Neural Logistics", desc: "AI-driven supply chains reducing global waste by 40% via predictive routing.", color: "from-purple-500 to-pink-500" },
-  { id: "03", title: "Climate Shield", desc: "Macro-engineering to stabilize local climates and protect coastlines.", color: "from-emerald-500 to-teal-400" },
-  { id: "04", title: "Fusion Baseload", desc: "Commercialized fusion reactors providing infinite, clean baseline power.", color: "from-orange-500 to-yellow-400" },
-  { id: "05", title: "Vertical Agronomics", desc: "Hyper-dense automated farming towers ensuring 100% food security.", color: "from-green-500 to-emerald-400" },
-  { id: "06", title: "Carbon Capture", desc: "Atmospheric scrubbers reversing historical emissions at scale.", color: "from-cyan-500 to-blue-500" },
-  { id: "07", title: "Global Maglev", desc: "Vacuum-tube transit connecting major continental hubs in hours.", color: "from-indigo-500 to-purple-500" },
-  { id: "08", title: "AI Governance", desc: "Quantum-backed nodes optimizing resource allocation in real-time.", color: "from-fuchsia-500 to-pink-500" },
-  { id: "09", title: "Ocean Desalination", desc: "Nuclear-powered hubs converting seawater for global irrigation.", color: "from-blue-600 to-indigo-400" },
-  { id: "10", title: "Closed-Loop Recycling", desc: "Molecular-level material recovery eliminating landfill waste.", color: "from-teal-500 to-green-400" },
-  { id: "11", title: "Orbital Solar", desc: "Space-based solar arrays beaming microwave energy to surface rectennas.", color: "from-yellow-500 to-orange-500" },
-  { id: "12", title: "Synthetic Biology", desc: "Engineered organisms for rapid medical and material manufacturing.", color: "from-pink-500 to-rose-400" },
-  { id: "13", title: "Automated Mining", desc: "Robotic swarms extracting resources with zero human risk.", color: "from-slate-500 to-gray-400" },
-  { id: "14", title: "Deep Sea Habitats", desc: "Pressurized oceanic cities expanding human habitation zones.", color: "from-cyan-600 to-blue-600" },
-  { id: "15", title: "Quantum Comms", desc: "Unhackable, instantaneous global data transmission networks.", color: "from-violet-500 to-fuchsia-400" },
-  { id: "16", title: "Weather Modification", desc: "Targeted atmospheric seeding to prevent droughts and severe storms.", color: "from-sky-500 to-indigo-500" },
-  { id: "17", title: "Autonomous Construction", desc: "Self-assembling infrastructure deployed by drone swarms.", color: "from-amber-500 to-orange-400" },
-  { id: "18", title: "Geo-Thermal Tapping", desc: "Deep-crust energy extraction for localized infinite heating.", color: "from-red-500 to-orange-500" },
-  { id: "19", title: "Cognitive VR", desc: "Immersive educational matrices accelerating human learning.", color: "from-purple-600 to-indigo-600" },
-  { id: "20", title: "Space Elevator", desc: "Carbon-nanotube tethers for low-cost orbital logistics.", color: "from-slate-300 to-slate-100" }
+  { id: "01", title: "Global Energy Grid", desc: "Sharing clean energy across the entire world so no country ever runs out of power.", benefit: "No more power outages, and 100% clean energy for everyone.", color: "from-blue-500 to-cyan-400", seed: "energy-grid" },
+  { id: "02", title: "Smart Supply Chains", desc: "Using smart computers to move food and goods perfectly without wasting anything.", benefit: "Stops food waste and lowers the cost of living globally.", color: "from-purple-500 to-pink-500", seed: "logistics" },
+  { id: "03", title: "Weather Protection Shield", desc: "Building giant structures to protect our coasts from bad weather and floods.", benefit: "Saves coastal cities from rising sea levels and deadly storms.", color: "from-emerald-500 to-teal-400", seed: "coastal-defense" },
+  { id: "04", title: "Unlimited Clean Power", desc: "Creating safe fusion energy that works like a tiny sun and never runs out.", benefit: "Replaces all dirty fossil fuels forever.", color: "from-orange-500 to-yellow-400", seed: "fusion-reactor" },
+  { id: "05", title: "Giant Vertical Farms", desc: "Building high-tech towers that grow fresh food indoors all year round.", benefit: "Ends world hunger and gives farmland back to nature.", color: "from-green-500 to-emerald-400", seed: "vertical-farming" },
+  { id: "06", title: "Air Cleaners", desc: "Using huge machines to suck bad pollution right out of the sky.", benefit: "Stops climate change and gives us clean, healthy air to breathe.", color: "from-cyan-500 to-blue-500", seed: "clean-air" },
+  { id: "07", title: "Super-Fast Trains", desc: "Vacuum tubes that let trains travel between countries in just a few hours.", benefit: "Makes global travel cheap, incredibly fast, and pollution-free.", color: "from-indigo-500 to-purple-500", seed: "maglev-train" },
+  { id: "08", title: "Fair AI Helper", desc: "Smart computers that help governments make fair choices for their people.", benefit: "Stops corruption and makes sure everyone gets what they need.", color: "from-fuchsia-500 to-pink-500", seed: "ai-network" },
+  { id: "09", title: "Ocean Water Purifiers", desc: "Turning salty ocean water into fresh, clean drinking water for everyone.", benefit: "Ends water shortages and stops droughts everywhere.", color: "from-blue-600 to-indigo-400", seed: "clean-water" },
+  { id: "10", title: "Zero-Waste Recycling", desc: "Breaking down old trash completely to make brand new things.", benefit: "Cleans up our landfills and oceans completely.", color: "from-teal-500 to-green-400", seed: "recycling" },
+  { id: "11", title: "Space Solar Power", desc: "Catching sunlight in space and sending it safely down to Earth.", benefit: "Provides free, endless energy even when it is dark outside.", color: "from-yellow-500 to-orange-500", seed: "space-solar" },
+  { id: "12", title: "Nature Medicine", desc: "Using biology to grow natural cures and safe materials instead of plastics.", benefit: "Cures diseases faster and stops plastic pollution.", color: "from-pink-500 to-rose-400", seed: "biology" },
+  { id: "13", title: "Safe Robot Mining", desc: "Sending robots to do the dangerous work of finding metals deep underground.", benefit: "Stops human suffering in mines and protects the earth's surface.", color: "from-slate-500 to-gray-400", seed: "robotics" },
+  { id: "14", title: "Underwater Cities", desc: "Building safe, beautiful places for people to live under the sea.", benefit: "Gives humans more room to live without destroying forests.", color: "from-cyan-600 to-blue-600", seed: "underwater-city" },
+  { id: "15", title: "Unhackable Internet", desc: "Creating a global web that hackers cannot break into.", benefit: "Keeps everyone's private information and money completely safe.", color: "from-violet-500 to-fuchsia-400", seed: "fiber-optics" },
+  { id: "16", title: "Rain Makers", desc: "Using safe technology to bring rain to dry places that need it.", benefit: "Stops wildfires and turns dry deserts into green spaces.", color: "from-sky-500 to-indigo-500", seed: "rain-clouds" },
+  { id: "17", title: "Robot Builders", desc: "Using swarms of flying drones to build houses quickly and safely.", benefit: "Ends homelessness by building cheap, safe homes very fast.", color: "from-amber-500 to-orange-400", seed: "construction-drones" },
+  { id: "18", title: "Earth Heat Power", desc: "Using the natural heat from deep underground to warm our cities.", benefit: "Provides free, clean heating for homes in cold countries.", color: "from-red-500 to-orange-500", seed: "geothermal" },
+  { id: "19", title: "Super Learning VR", desc: "Virtual reality schools that make learning fun and easy for everyone.", benefit: "Gives every single child on Earth a world-class education.", color: "from-purple-600 to-indigo-600", seed: "virtual-reality" },
+  { id: "20", title: "Space Elevator", desc: "A safe, strong cable that lets us travel into space like riding an elevator.", benefit: "Makes exploring space cheap and accessible to all humanity.", color: "from-slate-300 to-slate-100", seed: "space-elevator" }
 ];
 
 export default function GlobalVision() {
@@ -48,16 +48,16 @@ export default function GlobalVision() {
             <h2 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
               Type I <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">Civilization</span>
             </h2>
-            <p className="text-slate-300 max-w-3xl mx-auto text-xl leading-relaxed mb-10">
-              The transition requires planetary-scale engineering. NEXUS CIVITAS is designing the 20 core global systems needed to harness the Earth's energy and resources sustainably.
+            <p className="text-slate-300 max-w-4xl mx-auto text-xl leading-relaxed mb-10">
+              The main purpose of the entire project is to help solve major global problems and help the world become a Type 1 Civilization. NEXUS CIVITAS is designing the 20 core global systems needed to make the Earth clean, safe, and fair for everyone.
             </p>
             
-            {/* $5.9 Trillion Highlight */}
+            {/* $5.8 Trillion Highlight */}
             <div className="inline-block p-[2px] rounded-2xl bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 shadow-[0_0_40px_rgba(234,179,8,0.3)]">
               <div className="bg-[#020617] px-8 py-6 rounded-2xl backdrop-blur-xl">
-                <div className="text-sm font-mono text-yellow-400 tracking-widest uppercase mb-2">Estimated Global Investment</div>
+                <div className="text-sm font-mono text-yellow-400 tracking-widest uppercase mb-2">Total Estimated Project Cost</div>
                 <div className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-500">
-                  $5.9 Trillion
+                  $5.8 Trillion
                 </div>
               </div>
             </div>
@@ -74,18 +74,18 @@ export default function GlobalVision() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ delay: idx * 0.05 }}
-                className="min-w-[300px] md:min-w-[400px] h-[500px] snap-center relative rounded-3xl overflow-hidden group cursor-pointer border border-white/10 shadow-2xl"
+                className="min-w-[320px] md:min-w-[450px] h-[550px] snap-center relative rounded-3xl overflow-hidden group cursor-pointer border border-white/10 shadow-2xl"
               >
                 {/* Background Image */}
                 <img 
-                  src={`https://picsum.photos/seed/nexus_sys_${idx}/800/1000`} 
+                  src={`https://picsum.photos/seed/${sys.seed}/800/1000`} 
                   alt={sys.title}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   referrerPolicy="no-referrer"
                 />
                 
                 {/* Vibrant Gradient Overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-b from-transparent via-[#020617]/50 to-[#020617] opacity-90`}></div>
+                <div className={`absolute inset-0 bg-gradient-to-b from-transparent via-[#020617]/70 to-[#020617] opacity-90`}></div>
                 <div className={`absolute inset-0 bg-gradient-to-tr ${sys.color} opacity-40 mix-blend-overlay group-hover:opacity-60 transition-opacity duration-500`}></div>
                 
                 {/* Content */}
@@ -94,11 +94,22 @@ export default function GlobalVision() {
                     {sys.id}
                   </div>
                   
-                  <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                  <div className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                     <h4 className="text-3xl font-bold text-white mb-3 drop-shadow-lg">{sys.title}</h4>
-                    <p className="text-slate-200 text-lg leading-relaxed drop-shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                    <p className="text-slate-200 text-lg leading-relaxed drop-shadow-md mb-4">
                       {sys.desc}
                     </p>
+                    
+                    {/* Benefit Section (Reveals on Hover) */}
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20">
+                      <div className="flex items-start gap-3">
+                        <CheckCircle2 className="w-6 h-6 text-green-400 shrink-0 mt-0.5" />
+                        <div>
+                          <div className="text-xs font-bold text-green-400 uppercase tracking-wider mb-1">Benefit for the World</div>
+                          <div className="text-white text-sm leading-relaxed">{sys.benefit}</div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   
                   {/* Animated line */}
