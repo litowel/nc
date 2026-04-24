@@ -1,13 +1,13 @@
+import Logo from './Logo';
+
 export default function Footer() {
   return (
     <footer className="bg-[#020617] py-12 border-t border-white/10">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center gap-2 mb-6">
-              <div className="w-6 h-6 bg-white rounded-sm flex items-center justify-center">
-                <div className="w-3 h-3 bg-black rounded-sm"></div>
-              </div>
+            <div className="flex items-center gap-3 mb-6">
+              <Logo className="w-8 h-8 opacity-80" animate={false} />
               <span className="text-white font-display font-bold tracking-widest text-xl">NEXUS CIVITAS</span>
             </div>
             <p className="text-slate-500 text-sm max-w-sm">

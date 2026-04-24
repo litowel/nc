@@ -3,10 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
+    <title>NEXUS CIVITAS - Universal Peace</title>
+    <style>
+      .hide-google-branding .goog-te-gadget { color: transparent !important; }
+      .hide-google-branding .goog-te-gadget img { display: none !important; }
+      .goog-te-combo { 
+        padding: 8px 12px; 
+        border-radius: 8px; 
+        background: rgba(15, 23, 42, 0.9) !important; 
+        color: #fff !important; 
+        border: 1px solid rgba(255,255,255,0.2) !important; 
+        outline: none;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 14px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        backdrop-filter: blur(10px);
+        margin: 0 !important;
+      }
+      body { top: 0 !important; }
+      .skiptranslate.goog-te-banner-frame { display: none !important; }
+      
+      /* Position translator correctly at bottom right */
+      #google_translate_element {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 999999;
+      }
+    </style>
   </head>
-  <body>
+  <body class="hide-google-branding">
+    <div id="google_translate_element"></div>
     <div id="root"></div>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new window.google.translate.TranslateElement({
+          pageLanguage: 'en',
+          includedLanguages: 'en,es,zh-CN,hi,ar,fr,ru,pt,de,ja,ko,it,tr,vi,sw',
+          layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+          autoDisplay: false
+        }, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

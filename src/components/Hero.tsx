@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { ChevronRight } from 'lucide-react';
+import Logo from './Logo';
 
 interface HeroProps {
   onOpenModal: () => void;
@@ -15,15 +16,24 @@ export default function Hero({ onOpenModal }: HeroProps) {
         
         {/* Deep glowing orbs */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-blue-600/20 rounded-[100%] blur-[120px] animate-[pulse_8s_ease-in-out_infinite_alternate]"></div>
-        <div className="absolute bottom-0 right-0 w-[800px] h-[600px] bg-green-600/10 rounded-[100%] blur-[120px] animate-[pulse_10s_ease-in-out_infinite_alternate_reverse]"></div>
+        <div className="absolute bottom-0 right-0 w-[800px] h-[600px] bg-emerald-600/10 rounded-[100%] blur-[120px] animate-[pulse_10s_ease-in-out_infinite_alternate_reverse]"></div>
       </div>
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
           <motion.div
+            initial={{ opacity: 0, scale: 0.8, rotate: -20 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            className="flex justify-center mb-8"
+          >
+            <Logo className="w-32 h-32 md:w-48 md:h-48 drop-shadow-[0_0_50px_rgba(6,182,212,0.3)]" animate={true} />
+          </motion.div>
+
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-blue-500/30 bg-blue-500/10 backdrop-blur-md mb-8 shadow-[0_0_20px_rgba(59,130,246,0.2)]"
           >
             <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse shadow-[0_0_10px_rgba(96,165,250,0.8)]"></span>
@@ -33,7 +43,7 @@ export default function Hero({ onOpenModal }: HeroProps) {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
             className="text-7xl md:text-9xl lg:text-[10rem] font-bold mb-6 tracking-tighter leading-[0.95]"
           >
             Building the <br />
@@ -45,7 +55,7 @@ export default function Hero({ onOpenModal }: HeroProps) {
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
             className="text-xl md:text-2xl text-slate-300 mb-12 max-w-3xl mx-auto font-light leading-relaxed drop-shadow-lg"
           >
             AI-powered smart cities, global trade corridors, and sustainable infrastructure for a Type I civilization.
@@ -54,7 +64,7 @@ export default function Hero({ onOpenModal }: HeroProps) {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-6"
           >
             <button className="px-8 py-4 bg-white text-black font-bold rounded hover:bg-gray-200 transition-all flex items-center gap-2 group w-full sm:w-auto justify-center text-lg shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.5)]">
