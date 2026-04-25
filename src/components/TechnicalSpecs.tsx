@@ -18,7 +18,17 @@ export default function TechnicalSpecs() {
   const [activeTab, setActiveTab] = useState('A');
 
   return (
-    <section className="py-32 relative bg-nexus-surface border-y border-white/5">
+    <section className="py-32 relative bg-[#020617] border-y border-white/5 overflow-hidden">
+      {/* Background visual */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <img 
+          src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2000&auto=format&fit=crop"
+          alt="Tech circuitry background"
+          className="w-full h-full object-cover opacity-10 mix-blend-screen"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/80 to-[#020617]"></div>
+      </div>
+      
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <motion.div

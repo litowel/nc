@@ -4,10 +4,16 @@ import { Link } from 'react-router-dom';
 
 export default function TokenBanner() {
   return (
-    <section className="py-24 relative overflow-hidden bg-gradient-to-b from-[#0f172a] to-[#0a0f1d] border-y border-blue-900/30">
-      {/* Abstract Background */}
+    <section className="py-24 relative overflow-hidden bg-[#020617] border-y border-blue-900/30">
+      {/* Background Image */}
       <div className="absolute inset-0 z-0">
-         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-64 bg-blue-600/10 blur-[120px] rounded-full pointer-events-none"></div>
+         <img 
+            src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2070&auto=format&fit=crop"
+            alt="Blockchain abstract"
+            className="w-full h-full object-cover opacity-20 mix-blend-screen"
+         />
+         <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/50 to-[#020617]"></div>
+         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-64 bg-blue-600/20 blur-[120px] rounded-full pointer-events-none"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">

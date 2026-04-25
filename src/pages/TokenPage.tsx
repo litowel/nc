@@ -6,6 +6,7 @@ import {
   Lock, FileText, Share2, Building2, Landmark, Rocket
 } from 'lucide-react';
 import { PieChart, Pie, Cell, Tooltip as RechartsTooltip, ResponsiveContainer } from 'recharts';
+import VisionSlideshow from '../components/VisionSlideshow';
 
 // --- Components ---
 

@@ -13,7 +13,17 @@ const civImages: Record<string, string> = {
 
 export default function CivilizationStages() {
   return (
-    <section className="py-32 relative bg-[#0f172a] overflow-hidden">
+    <section className="py-32 relative bg-[#020617] overflow-hidden">
+      {/* Space Background Image */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <img 
+          src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=2000&auto=format&fit=crop"
+          alt="Deep space galaxy"
+          className="w-full h-full object-cover opacity-20 mix-blend-screen"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#020617] via-[#020617]/60 to-[#020617]"></div>
+      </div>
+      
       {/* Background Orbs */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
         <div className="absolute top-[10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/10 rounded-full blur-[150px] mix-blend-screen"></div>

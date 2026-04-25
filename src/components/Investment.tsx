@@ -3,8 +3,18 @@ import { TrendingUp, ShieldCheck, BarChart3 } from 'lucide-react';
 
 export default function Investment() {
   return (
-    <section className="py-32 relative overflow-hidden">
-      <div className="container mx-auto px-6">
+    <section className="py-32 relative overflow-hidden bg-[#020617]">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <img 
+          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
+          alt="Investment architecture background"
+          className="w-full h-full object-cover opacity-10 mix-blend-screen"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/80 to-[#020617]"></div>
+      </div>
+      
+      <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center mb-20">
           <h2 className="text-sm font-mono text-yellow-400 tracking-widest uppercase mb-4">// 06. Capital</h2>
           <h3 className="text-4xl md:text-6xl font-bold text-white mb-6">Multi-Trillion Dollar <br/> Infrastructure Opportunity</h3>
