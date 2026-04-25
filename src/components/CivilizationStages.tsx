@@ -3,6 +3,14 @@ import { HeartHandshake, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { civilizationData } from '../data/civilizations';
 
+const civImages: Record<string, string> = {
+  "type-1": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=600&auto=format&fit=crop",
+  "type-2": "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?q=80&w=600&auto=format&fit=crop",
+  "type-3": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=600&auto=format&fit=crop",
+  "type-4": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=600&auto=format&fit=crop",
+  "type-5": "https://images.unsplash.com/photo-1543722530-d2c3201371e7?q=80&w=600&auto=format&fit=crop",
+};
+
 export default function CivilizationStages() {
   return (
     <section className="py-32 relative bg-[#0f172a] overflow-hidden">
@@ -45,8 +53,16 @@ export default function CivilizationStages() {
                 <div className="relative h-full p-8 border border-white/10 bg-white/5 backdrop-blur-xl rounded-3xl transition-all duration-500 hover:scale-105 hover:bg-white/10 hover:border-white/20 hover:shadow-2xl overflow-hidden flex flex-col justify-between">
                   {/* Subtle Background Glow per Type */}
                   <div className={`absolute top-0 right-0 w-32 h-32 blur-3xl opacity-20 group-hover:opacity-60 transition-opacity ${civ.bgGlow}`}></div>
+                  
+                  {/* High Quality Background Image */}
+                  <img 
+                    src={civImages[civ.id]} 
+                    alt={civ.name}
+                    className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay group-hover:opacity-40 transition-opacity duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/80 to-transparent"></div>
 
-                  <div>
+                  <div className="relative z-10">
                     <h3 className={`text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${civ.color} tracking-widest uppercase mb-2`}>
                       {civ.type}
                     </h3>
@@ -56,7 +72,7 @@ export default function CivilizationStages() {
                     </p>
                   </div>
 
-                  <div className="mt-auto">
+                  <div className="relative z-10 mt-auto">
                     <div className="text-sm text-slate-400 uppercase tracking-widest font-mono mb-2">Cost</div>
                     <div className="text-2xl font-bold text-white mb-6 drop-shadow-lg">{civ.cost}</div>
 

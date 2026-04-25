@@ -4,6 +4,14 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Sparkles, CheckCircle2, Hexagon, ArrowRight, HeartHandshake, Home, ChevronDown } from 'lucide-react';
 import { civilizationData } from '../data/civilizations';
 
+const civImages: Record<string, string> = {
+  "type-1": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop",
+  "type-2": "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?q=80&w=1974&auto=format&fit=crop",
+  "type-3": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=2093&auto=format&fit=crop",
+  "type-4": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop",
+  "type-5": "https://images.unsplash.com/photo-1543722530-d2c3201371e7?q=80&w=2000&auto=format&fit=crop",
+};
+
 export default function CivilizationPage() {
   const { typeId } = useParams<{ typeId: string }>();
   
@@ -19,31 +27,31 @@ export default function CivilizationPage() {
       {/* Dynamic Thematic Background Image/Overlay */}
       <div className="absolute inset-0 z-0">
          <img 
-            src={`https://picsum.photos/seed/${civ.seed}/1920/1080`} 
+            src={civImages[civ.id]} 
             alt={civ.name}
-            className="w-full h-full object-cover opacity-10 object-center"
+            className="w-full h-full object-cover opacity-20 mix-blend-screen object-center"
             referrerPolicy="no-referrer"
          />
-         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0f172a]/80 to-[#0f172a]"></div>
+         <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a]/70 via-[#0f172a]/80 to-[#0f172a]"></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 md:px-6 relative z-10 w-full max-w-7xl">
         <Link to="/" className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors mb-8">
             <Home className="w-4 h-4" />
             <span className="text-sm font-medium uppercase tracking-widest">Back to Hub</span>
         </Link>
         
-        <div className="text-center mb-24 mt-8 relative">
+        <div className="text-center mb-16 md:mb-24 mt-4 md:mt-8 relative">
            <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm mb-6 ${civ.bgGlow}`}>
+            <div className={`inline-flex items-center gap-2 px-3 py-1 md:px-4 md:py-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm mb-6 ${civ.bgGlow}`}>
               <HeartHandshake className="w-4 h-4 text-white" />
-              <span className="text-sm font-bold text-white tracking-widest uppercase">Universal Interconnectivity</span>
+              <span className="text-xs md:text-sm font-bold text-white tracking-widest uppercase">Universal Interconnectivity</span>
             </div>
             
-            <h1 className="text-6xl md:text-8xl font-bold text-white mb-4 tracking-tight drop-shadow-2xl">
+            <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold text-white mb-4 tracking-tight drop-shadow-2xl">
               {civ.type} <span className={`text-transparent bg-clip-text bg-gradient-to-r ${civ.color}`}>Civilization</span>
             </h1>
             <h2 className="text-3xl md:text-5xl font-light text-white/90 mb-8 tracking-wide drop-shadow-xl">

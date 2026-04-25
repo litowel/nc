@@ -11,6 +11,16 @@ export default function TechLayer() {
 
   return (
     <section className="py-32 relative bg-[#020617] overflow-hidden">
+      {/* Visual Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <img 
+          src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop"
+          alt="Cyber security data background"
+          className="w-full h-full object-cover opacity-10 mix-blend-screen"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#020617]/90 via-[#020617]/80 to-[#020617]"></div>
+      </div>
+
       {/* Colorful Background Blurs */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
         <div className="absolute top-[50%] left-[20%] w-[40%] h-[40%] bg-cyan-600/10 rounded-full blur-[120px] mix-blend-screen"></div>

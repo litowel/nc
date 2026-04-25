@@ -9,6 +9,7 @@ import CivilizationStages from '../components/CivilizationStages';
 import OpenSourceInitiative from '../components/OpenSourceInitiative';
 import TechLayer from '../components/TechLayer';
 import Investment from '../components/Investment';
+import TokenBanner from '../components/TokenBanner';
 import CTA from '../components/CTA';
 
 interface HomePageProps {
@@ -22,6 +23,7 @@ export default function HomePage({ onOpenModal }: HomePageProps) {
       <CorePillars />
       <ElevatedSystem />
       <Masterplan />
+      <TokenBanner />
       <TechnicalSpecs />
       <ProposedProjects />
       <GlobalVision />

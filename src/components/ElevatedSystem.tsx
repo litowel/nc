@@ -10,10 +10,20 @@ export default function ElevatedSystem() {
   ];
 
   return (
-    <section className="py-32 relative overflow-hidden">
-      <div className="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-blue-900/10 to-transparent pointer-events-none"></div>
+    <section className="py-32 relative overflow-hidden bg-[#020617]">
+      {/* Visual Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <img 
+          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
+          alt="Modern architecture looking up background"
+          className="w-full h-full object-cover opacity-10 mix-blend-screen"
+        />
+        <div className="absolute inset-0 bg-gradient-to-l from-[#020617]/90 via-[#020617]/80 to-[#020617]"></div>
+      </div>
+
+      <div className="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-blue-900/10 to-transparent pointer-events-none z-0"></div>
       
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           {/* Text Content */}
@@ -50,7 +60,7 @@ export default function ElevatedSystem() {
           </div>
 
           {/* Visual Diagram Area */}
-          <div className="relative h-[600px] w-full border border-white/10 bg-black/40 rounded-2xl overflow-hidden flex items-center justify-center group">
+          <div className="relative h-[600px] w-full border border-white/10 bg-black/40 rounded-2xl overflow-hidden flex items-center justify-center group backdrop-blur-sm shadow-2xl">
             {/* Abstract representation of the layers */}
             <div className="relative w-3/4 h-3/4 flex flex-col items-center justify-center perspective-1000">
               

@@ -11,6 +11,7 @@ import InvestorModal from './components/InvestorModal';
 import HomePage from './pages/HomePage';
 import CivilizationPage from './pages/CivilizationPage';
 import StakeholdersPage from './pages/StakeholdersPage';
+import TokenPage from './pages/TokenPage';
 
 export default function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="/" element={<HomePage onOpenModal={() => setIsModalOpen(true)} />} />
           <Route path="/civilization/:typeId" element={<CivilizationPage />} />
           <Route path="/stakeholders" element={<StakeholdersPage />} />
+          <Route path="/token" element={<TokenPage />} />
         </Routes>
         <Footer />
         <InvestorModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />

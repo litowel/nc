@@ -15,7 +15,7 @@ const projects = [
     ],
     icon: <MapPin className="w-6 h-6 text-green-400" />,
     color: "from-green-500 to-emerald-600",
-    seed: "ghana-city"
+    image: "https://images.unsplash.com/photo-1542361345-89e58247f2d5?q=80&w=2070&auto=format&fit=crop" // Coastal/City intersection
   },
   {
     id: "02",
@@ -30,7 +30,7 @@ const projects = [
     ],
     icon: <Droplets className="w-6 h-6 text-blue-400" />,
     color: "from-blue-500 to-cyan-600",
-    seed: "desert-oasis"
+    image: "https://images.unsplash.com/photo-1682687982501-1e58f8145380?q=80&w=2070&auto=format&fit=crop" // Desert Oasis
   },
   {
     id: "03",
@@ -45,7 +45,7 @@ const projects = [
     ],
     icon: <Zap className="w-6 h-6 text-yellow-400" />,
     color: "from-yellow-500 to-orange-600",
-    seed: "geothermal-mountains"
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070&auto=format&fit=crop" // Mountains Geothermal
   },
   {
     id: "04",
@@ -60,7 +60,7 @@ const projects = [
     ],
     icon: <Activity className="w-6 h-6 text-purple-400" />,
     color: "from-purple-500 to-pink-600",
-    seed: "ocean-train"
+    image: "https://images.unsplash.com/photo-1549419131-7e8fc9098711?q=80&w=2070&auto=format&fit=crop" // Maglev train / ocean transit
   }
 ];
 
@@ -95,7 +95,7 @@ export default function ProposedProjects() {
               {/* Image Side */}
               <div className="w-full lg:w-1/2 relative h-[400px] lg:h-[500px] rounded-3xl overflow-hidden group shadow-2xl">
                 <img 
-                  src={`https://picsum.photos/seed/${project.seed}/1000/800`} 
+                  src={project.image} 
                   alt={project.title}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   referrerPolicy="no-referrer"
