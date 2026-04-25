@@ -211,29 +211,52 @@ const rwaBlueprints = [
   "Universal Knowledge Architectures (Empathy/Education SBTs)"
 ];
 
+const bgImages = [
+  "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2070&auto=format&fit=crop", // Blockchain
+  "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?q=80&w=2000&auto=format&fit=crop", // Orbit
+  "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop", // Earth
+  "https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=2000&auto=format&fit=crop"  // Sci Fi City
+];
+
 // --- Main Page ---
 
 export default function TokenPage() {
   const [buyModalOpen, setBuyModalOpen] = useState(false);
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
+  const [currentBg, setCurrentBg] = useState(0);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentBg((prev) => (prev + 1) % bgImages.length);
+    }, 8000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-[#0f172a] relative overflow-hidden pt-20 md:pt-32 pb-20 md:pb-32 font-sans">
+    <div className="min-h-screen bg-[#020617] relative overflow-hidden pt-20 md:pt-32 pb-20 md:pb-32 font-sans">
       <BuyNexusModal isOpen={buyModalOpen} onClose={() => setBuyModalOpen(false)} />
 
       {/* Dynamic Thematic Background Image/Overlay */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-         <img 
-            src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2070&auto=format&fit=crop" 
-            alt="Blockchain abstract background"
-            className="w-full h-full object-cover opacity-10 mix-blend-screen object-center"
-            referrerPolicy="no-referrer"
-         />
-         <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a]/70 via-[#0f172a]/90 to-[#0f172a]"></div>
+         <AnimatePresence mode="wait">
+           <motion.img 
+              key={currentBg}
+              src={bgImages[currentBg]}
+              initial={{ opacity: 0, scale: 1.05 }}
+              animate={{ opacity: 0.25, scale: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 2.5, ease: "easeInOut" }}
+              alt="Tokenomics background"
+              className="absolute inset-0 w-full h-full object-cover mix-blend-screen object-center"
+              referrerPolicy="no-referrer"
+           />
+         </AnimatePresence>
+         <div className="absolute inset-0 bg-gradient-to-b from-[#020617]/70 via-[#020617]/90 to-[#020617]"></div>
+         <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/80 via-transparent to-transparent"></div>
       </div>
 
       {/* Background Orbs */}

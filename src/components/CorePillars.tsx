@@ -47,6 +47,16 @@ const pillars = [
 export default function CorePillars() {
   return (
     <section className="py-32 relative bg-[#020617] overflow-hidden">
+      {/* Visual Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <img 
+          src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=2000&auto=format&fit=crop"
+          alt="Smart city architecture background"
+          className="w-full h-full object-cover opacity-10 mix-blend-screen"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/80 to-[#020617]"></div>
+      </div>
+
       {/* Colorful Background Blurs */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
         <div className="absolute top-[20%] left-[-10%] w-[40%] h-[40%] bg-blue-600/20 rounded-full blur-[120px] mix-blend-screen"></div>

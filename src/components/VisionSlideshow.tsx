@@ -168,24 +168,24 @@ export default function VisionSlideshow() {
               <img 
                 src={slides[currentIndex].image} 
                 alt={slides[currentIndex].title}
-                className="w-full h-full object-cover mix-blend-screen opacity-60"
+                className="w-full h-full object-cover mix-blend-screen opacity-60 transition-all duration-700 group-hover:scale-105 group-hover:opacity-80"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/40 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/40 to-transparent group-hover:via-[#020617]/60 transition-colors duration-700"></div>
               
               <div className="absolute bottom-0 left-0 w-full p-6 md:p-12">
                 <motion.div 
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.3 }}
-                  className="max-w-4xl"
+                  className="max-w-4xl transform transition-transform duration-500 group-hover:-translate-y-2"
                 >
-                  <div className="inline-block px-3 py-1 bg-emerald-500/20 border border-emerald-500/30 rounded-full text-emerald-400 text-xs font-bold uppercase tracking-wider mb-4">
+                  <div className="inline-block px-3 py-1 bg-emerald-500/20 border border-emerald-500/30 rounded-full text-emerald-400 text-xs font-bold uppercase tracking-wider mb-4 group-hover:bg-emerald-500/40 transition-colors duration-500">
                     Initiative {String(currentIndex + 1).padStart(2, '0')}
                   </div>
-                  <h3 className="text-2xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg leading-tight">
+                  <h3 className="text-2xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg leading-tight group-hover:text-emerald-100 transition-colors duration-500">
                     {slides[currentIndex].title}
                   </h3>
-                  <p className="text-sm md:text-xl text-slate-200 drop-shadow-md leading-relaxed border-l-2 border-emerald-500 pl-4 md:pl-6">
+                  <p className="text-sm md:text-xl text-slate-200 drop-shadow-md leading-relaxed border-l-2 border-emerald-500 pl-4 md:pl-6 group-hover:text-white transition-colors duration-500">
                     {slides[currentIndex].note}
                   </p>
                 </motion.div>

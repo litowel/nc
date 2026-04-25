@@ -11,6 +11,7 @@ import TechLayer from '../components/TechLayer';
 import Investment from '../components/Investment';
 import TokenBanner from '../components/TokenBanner';
 import CTA from '../components/CTA';
+import VisionSlideshow from '../components/VisionSlideshow';
 
 interface HomePageProps {
   onOpenModal: () => void;
@@ -25,6 +26,7 @@ export default function HomePage({ onOpenModal }: HomePageProps) {
       <Masterplan />
       <TokenBanner />
       <TechnicalSpecs />
+      <VisionSlideshow />
       <ProposedProjects />
       <GlobalVision />
       <CivilizationStages />
