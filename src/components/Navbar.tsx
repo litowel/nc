@@ -37,6 +37,7 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
           <Link to="/" className="hover:text-white transition-colors drop-shadow">Hub</Link>
+          <Link to="/smart-city" className="hover:text-white transition-colors drop-shadow">Smart City</Link>
           <Link to="/stakeholders" className="hover:text-white transition-colors drop-shadow">Global Stakeholders</Link>
           <Link to="/token" className="text-blue-400 hover:text-blue-300 transition-colors drop-shadow font-bold">$NEXUS ICO</Link>
           <button 
@@ -60,6 +61,7 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-nexus-bg border-b border-white/10 p-6 flex flex-col gap-4 shadow-2xl">
           <Link to="/" onClick={() => setMobileMenuOpen(false)} className="text-slate-300 hover:text-white py-2">Hub</Link>
+          <Link to="/smart-city" onClick={() => setMobileMenuOpen(false)} className="text-slate-300 hover:text-white py-2">Smart City</Link>
           <Link to="/stakeholders" onClick={() => setMobileMenuOpen(false)} className="text-slate-300 hover:text-white py-2">Global Stakeholders</Link>
           <Link to="/token" onClick={() => setMobileMenuOpen(false)} className="text-blue-400 hover:text-blue-300 font-bold py-2">$NEXUS ICO</Link>
           <button 

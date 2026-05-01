@@ -12,6 +12,7 @@ import HomePage from './pages/HomePage';
 import CivilizationPage from './pages/CivilizationPage';
 import StakeholdersPage from './pages/StakeholdersPage';
 import TokenPage from './pages/TokenPage';
+import SmartCityPage from './pages/SmartCityPage';
 
 export default function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -22,6 +23,7 @@ export default function App() {
         <Navbar onOpenModal={() => setIsModalOpen(true)} />
         <Routes>
           <Route path="/" element={<HomePage onOpenModal={() => setIsModalOpen(true)} />} />
+          <Route path="/smart-city" element={<SmartCityPage />} />
           <Route path="/civilization/:typeId" element={<CivilizationPage />} />
           <Route path="/stakeholders" element={<StakeholdersPage />} />
           <Route path="/token" element={<TokenPage />} />

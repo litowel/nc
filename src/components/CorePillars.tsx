@@ -85,7 +85,7 @@ export default function CorePillars() {
               <div className="relative h-full w-full bg-[#020617]/90 backdrop-blur-xl rounded-[22px] p-8 overflow-hidden">
                 {/* Background Image for Card */}
                 <div 
-                  className="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-30 transition-opacity duration-700 mix-blend-overlay"
+                  className="absolute inset-0 w-full h-full opacity-40 group-hover:opacity-80 transition-opacity duration-700 mix-blend-overlay group-hover:scale-110 transition-transform"
                   style={{
                     backgroundImage: `url(${pillar.image})`,
                     backgroundSize: 'cover',
@@ -94,10 +94,10 @@ export default function CorePillars() {
                 ></div>
                 
                 {/* Overlay gradient to keep text readable */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/40 to-transparent"></div>
 
-                <div className="relative z-10 h-full flex flex-col transition-transform duration-500 group-hover:translate-y-[-5px]">
-                  <div className={`mb-8 w-16 h-16 rounded-2xl bg-gradient-to-br ${pillar.gradient} flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                <div className="relative z-10 h-full flex flex-col transition-transform duration-500 group-hover:-translate-y-2">
+                  <div className={`mb-8 w-16 h-16 rounded-2xl bg-gradient-to-br ${pillar.gradient} flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.1)] transform group-hover:scale-110 group-hover:rotate-3 group-hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-500`}>
                     {pillar.icon}
                   </div>
                   <h4 className="text-3xl font-bold text-white mb-4 font-display">{pillar.title}</h4>

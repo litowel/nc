@@ -2,7 +2,6 @@ import Hero from '../components/Hero';
 import CorePillars from '../components/CorePillars';
 import ElevatedSystem from '../components/ElevatedSystem';
 import Masterplan from '../components/Masterplan';
-import TechnicalSpecs from '../components/TechnicalSpecs';
 import ProposedProjects from '../components/ProposedProjects';
 import GlobalVision from '../components/GlobalVision';
 import CivilizationStages from '../components/CivilizationStages';
@@ -25,7 +24,6 @@ export default function HomePage({ onOpenModal }: HomePageProps) {
       <ElevatedSystem />
       <Masterplan />
       <TokenBanner />
-      <TechnicalSpecs />
       <VisionSlideshow />
       <ProposedProjects />
       <GlobalVision />
