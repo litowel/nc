@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Logo from './Logo';
 
 const bgImages = [
   "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop", // Earth/Space
   "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop", // Modern Architecture/City
-  "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=2093&auto=format&fit=crop", // Deep Space/Galaxy
-  "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop"  // Futuristic Tech / Energy
+  "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2072&auto=format&fit=crop", // Cinematic Tech City
+  "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=2070&auto=format&fit=crop"  // Futuristic Energy/Lighting
 ];
 
 interface HeroProps {
@@ -50,15 +51,14 @@ export default function Hero({ onOpenModal }: HeroProps) {
       <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Animated glowing lines simulating city grid */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_20%,transparent_100%)] opacity-[0.03]"></div>
-
         
         {/* Deep glowing orbs */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-blue-500/30 rounded-[100%] blur-[150px] animate-[pulse_8s_ease-in-out_infinite_alternate]"></div>
-        <div className="absolute bottom-0 right-0 w-[800px] h-[600px] bg-emerald-500/20 rounded-[100%] blur-[150px] animate-[pulse_10s_ease-in-out_infinite_alternate_reverse]"></div>
+        <div className="absolute bottom-0 right-0 w-[800px] h-[600px] bg-cyan-500/20 rounded-[100%] blur-[150px] animate-[pulse_10s_ease-in-out_infinite_alternate_reverse]"></div>
       </div>
       
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-5xl mx-auto text-center">
+      <div className="container mx-auto px-6 relative z-10 w-full">
+        <div className="max-w-5xl mx-auto text-center w-full">
           <motion.div
             initial={{ opacity: 0, scale: 0.8, rotate: -20 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
@@ -72,7 +72,7 @@ export default function Hero({ onOpenModal }: HeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-sky-400/40 bg-sky-500/10 backdrop-blur-xl mb-10 shadow-[0_0_30px_rgba(56,189,248,0.3)]"
+            className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-sky-400/40 bg-sky-500/10 backdrop-blur-xl mb-8 shadow-[0_0_30px_rgba(56,189,248,0.3)]"
           >
             <span className="w-3 h-3 rounded-full bg-sky-400 animate-pulse shadow-[0_0_15px_rgba(56,189,248,1)]"></span>
             <span className="text-sm font-bold text-sky-100 tracking-[0.2em] uppercase font-mono">Initiative 01 Active</span>
@@ -82,11 +82,11 @@ export default function Hero({ onOpenModal }: HeroProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-6xl md:text-8xl lg:text-[11rem] font-bold mb-8 tracking-tighter leading-[0.9] drop-shadow-2xl font-display text-white"
+            className="text-5xl md:text-7xl lg:text-[7rem] font-bold mb-6 tracking-tighter leading-[1] drop-shadow-2xl font-display text-white uppercase"
           >
-            Building the <br />
+            Building The <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-white to-emerald-300 text-glow-sky">
-              Next Civilization
+              Infrastructure For Humanity’s Next Civilization
             </span>
           </motion.h1>
           
@@ -94,27 +94,36 @@ export default function Hero({ onOpenModal }: HeroProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-xl md:text-3xl text-slate-200 mb-14 max-w-4xl mx-auto font-light leading-relaxed drop-shadow-xl"
+            className="text-lg md:text-2xl text-slate-300 mb-12 max-w-4xl mx-auto font-light leading-relaxed drop-shadow-xl"
           >
-            AI-powered smart cities, global trade corridors, and sustainable infrastructure for a Type I civilization.
+            AI-powered smart cities, autonomous infrastructure, clean energy systems, and tokenized global development platforms designed to help humanity transition toward a sustainable Type I Civilization.
           </motion.p>
           
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-6"
+            className="flex flex-wrap items-center justify-center gap-4 max-w-4xl mx-auto"
           >
-            <button className="px-10 py-5 bg-gradient-to-r from-white to-slate-200 text-black font-bold rounded-lg hover:from-sky-50 hover:to-white transition-all flex items-center gap-3 group w-full sm:w-auto justify-center text-xl shadow-[0_0_40px_rgba(255,255,255,0.4)] hover:shadow-[0_0_60px_rgba(255,255,255,0.6)] transform hover:-translate-y-1">
-              Explore the Vision
-              <ChevronRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
-            </button>
+            <Link to="/civilization/type-1" className="px-8 py-4 bg-gradient-to-r from-white to-slate-200 text-black font-bold rounded-lg hover:from-sky-50 hover:to-white transition-all flex items-center justify-center gap-2 group w-full sm:w-auto shadow-[0_0_40px_rgba(255,255,255,0.4)] hover:shadow-[0_0_60px_rgba(255,255,255,0.6)] transform hover:-translate-y-1">
+              Explore The Vision
+              <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
             <button 
               onClick={onOpenModal}
-              className="px-10 py-5 border border-sky-400/50 bg-black/40 backdrop-blur-xl hover:border-sky-300 hover:bg-sky-900/40 transition-all text-white font-bold rounded-lg w-full sm:w-auto justify-center text-xl shadow-[0_0_20px_rgba(56,189,248,0.1)] hover:shadow-[0_0_40px_rgba(56,189,248,0.3)] transform hover:-translate-y-1"
+              className="px-8 py-4 border border-sky-400/50 bg-black/40 backdrop-blur-xl hover:border-sky-300 hover:bg-sky-900/40 transition-all text-white font-bold rounded-lg w-full sm:w-auto justify-center shadow-[0_0_20px_rgba(56,189,248,0.1)] hover:shadow-[0_0_40px_rgba(56,189,248,0.3)] transform hover:-translate-y-1"
             >
-              View Investor Deck
+              Access Investor Portal
             </button>
+            <Link to="/smart-city" className="px-8 py-4 border border-white/20 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition-all text-white font-bold rounded-lg w-full sm:w-auto justify-center transform hover:-translate-y-1 text-center">
+              View Smart City Blueprint
+            </Link>
+            <Link to="/stakeholders" className="px-8 py-4 border border-white/20 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition-all text-white font-bold rounded-lg w-full sm:w-auto justify-center transform hover:-translate-y-1 text-center">
+              Join The Initiative
+            </Link>
+            <Link to="/token" className="px-8 py-4 border border-blue-400/50 bg-blue-900/20 backdrop-blur-xl hover:bg-blue-800/40 transition-all text-blue-300 hover:text-blue-200 font-bold rounded-lg w-full sm:w-auto justify-center shadow-[0_0_20px_rgba(59,130,246,0.1)] hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] transform hover:-translate-y-1 text-center">
+              Explore $NEXUS
+            </Link>
           </motion.div>
         </div>
       </div>

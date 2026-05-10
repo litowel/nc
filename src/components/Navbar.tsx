@@ -29,20 +29,21 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navClass}`}>
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3">
-          <Logo className="w-10 h-10 drop-shadow-lg" animate={true} />
-          <span className="text-white font-display font-bold tracking-widest text-xl drop-shadow-md">NEXUS CIVITAS</span>
+        <Link to="/" className="flex items-center gap-3 group">
+          <Logo className="w-10 h-10 drop-shadow-lg group-hover:scale-105 transition-transform" animate={true} />
+          <span className="text-white font-display font-bold tracking-widest text-xl drop-shadow-md group-hover:text-cyan-400 transition-colors uppercase">NEXUS CIVITAS</span>
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-          <Link to="/" className="hover:text-white transition-colors drop-shadow">Hub</Link>
-          <Link to="/smart-city" className="hover:text-white transition-colors drop-shadow">Smart City</Link>
-          <Link to="/stakeholders" className="hover:text-white transition-colors drop-shadow">Global Stakeholders</Link>
-          <Link to="/token" className="text-blue-400 hover:text-blue-300 transition-colors drop-shadow font-bold">$NEXUS ICO</Link>
+        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300 uppercase tracking-widest">
+          <Link to="/" className="hover:text-cyan-400 transition-colors drop-shadow">Hub</Link>
+          <Link to="/smart-city" className="hover:text-cyan-400 transition-colors drop-shadow">Smart City</Link>
+          <Link to="/civilization/type1" className="hover:text-cyan-400 transition-colors drop-shadow">Type I</Link>
+          <Link to="/stakeholders" className="hover:text-cyan-400 transition-colors drop-shadow">Stakeholders</Link>
+          <Link to="/token" className="text-blue-400 hover:text-blue-300 transition-colors drop-shadow font-bold">$NEXUS</Link>
           <button 
             onClick={onOpenModal}
-            className="px-5 py-2 border border-white/20 hover:bg-white hover:text-black transition-all rounded drop-shadow bg-white/5 backdrop-blur"
+            className="px-6 py-2.5 border border-cyan-400/50 hover:bg-cyan-500/10 hover:border-cyan-400 text-cyan-300 transition-all rounded shadow-[0_0_15px_rgba(6,182,212,0.1)] hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] bg-black/40 backdrop-blur uppercase tracking-widest text-xs font-bold"
           >
             Investor Portal
           </button>
@@ -59,17 +60,18 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-nexus-bg border-b border-white/10 p-6 flex flex-col gap-4 shadow-2xl">
-          <Link to="/" onClick={() => setMobileMenuOpen(false)} className="text-slate-300 hover:text-white py-2">Hub</Link>
-          <Link to="/smart-city" onClick={() => setMobileMenuOpen(false)} className="text-slate-300 hover:text-white py-2">Smart City</Link>
-          <Link to="/stakeholders" onClick={() => setMobileMenuOpen(false)} className="text-slate-300 hover:text-white py-2">Global Stakeholders</Link>
-          <Link to="/token" onClick={() => setMobileMenuOpen(false)} className="text-blue-400 hover:text-blue-300 font-bold py-2">$NEXUS ICO</Link>
+        <div className="md:hidden absolute top-full left-0 right-0 bg-[#020617] border-b border-white/10 p-6 flex flex-col gap-4 shadow-2xl uppercase tracking-widest text-sm font-medium">
+          <Link to="/" onClick={() => setMobileMenuOpen(false)} className="text-slate-300 hover:text-cyan-400 py-2">Hub</Link>
+          <Link to="/smart-city" onClick={() => setMobileMenuOpen(false)} className="text-slate-300 hover:text-cyan-400 py-2">Smart City</Link>
+          <Link to="/civilization/type1" onClick={() => setMobileMenuOpen(false)} className="text-slate-300 hover:text-cyan-400 py-2">Type I Civilization</Link>
+          <Link to="/stakeholders" onClick={() => setMobileMenuOpen(false)} className="text-slate-300 hover:text-cyan-400 py-2">Global Stakeholders</Link>
+          <Link to="/token" onClick={() => setMobileMenuOpen(false)} className="text-blue-400 hover:text-blue-300 font-bold py-2">$NEXUS Token</Link>
           <button 
             onClick={() => {
               setMobileMenuOpen(false);
               onOpenModal();
             }}
-            className="px-5 py-3 border border-white/20 hover:bg-white hover:text-black transition-all rounded mt-2 text-white bg-white/10"
+            className="px-5 py-3 border border-cyan-400/50 text-cyan-300 hover:bg-cyan-900/40 transition-all rounded mt-2 font-bold"
           >
             Investor Portal
           </button>
@@ -78,4 +80,5 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
     </nav>
   );
 }
+
 
